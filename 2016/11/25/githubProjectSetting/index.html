@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://shilili0.github.io/2016/11/25/githubProjectSetting/index.html">
 <meta property="og:site_name" content="甜甜宝宝">
 <meta property="og:description" content="本文主要叙述的是如何用同一个github账号在两台电脑上同步开发，我们有时需要外出开发，将项目提交到github，然后希望家里的能同步，继续开发">
-<meta property="og:updated_time" content="2016-11-25T02:48:59.923Z">
+<meta property="og:updated_time" content="2016-12-01T02:14:33.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="githubProjectSetting">
 <meta name="twitter:description" content="本文主要叙述的是如何用同一个github账号在两台电脑上同步开发，我们有时需要外出开发，将项目提交到github，然后希望家里的能同步，继续开发">
@@ -152,7 +152,28 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>本文主要叙述的是如何用同一个github账号在两台电脑上同步开发，我们有时需要外出开发，将项目提交到github，然后希望家里的能同步，继续开发<br><a id="more"></a></p>
-
+<p>#如何用同一个github账号在两台电脑上同步开发</p>
+<p>##我们有时需要外出开发，将项目提交到github，然后希望家里的能同步，继续开发，配置步骤如下</p>
+<p>###一、 安装git Bash</p>
+<p>###二、 安装nodejs  </p>
+<pre><code>- 下载并安装nodejs
+- 使用node -v 检查nodejs是否安装成功
+- npm -v 来检查npm是否安装成功
+</code></pre><p>###三、 生成本地密钥ssh(此处不能获取http)，复制链接，添加到github和gitos，添加完成后就没有github什么事了<br>        生成本地密钥代码  </p>
+<pre><code>1. git config --global user.name your-name  
+2. git config --global user.email &quot;admin@qq.com&quot;  
+3. ssh-keygen -t rsa -C &quot;admin@qq.com&quot;  
+</code></pre><p>###四、 在git Bash中安装hexo和hexo-cli</p>
+<pre><code>1. npm install -g hexo  
+2. npm install -g hexo-cli   
+</code></pre><p>###五、 将远程仓库克隆到本地  </p>
+<pre><code>1. git clone git@github.com:shilili0/blogs.git
+</code></pre><p>###六、 在clone的目录下执行npm install  </p>
+<pre><code>1. npm install
+</code></pre><p>###七、然后就完成了，启动服务器，输入localhost:4000,就可以看到clone下的内容了</p>
+<pre><code>1. hexo deploy
+2. hexo server
+</code></pre>
       
     </div>
     <div class="article-info article-info-index">
